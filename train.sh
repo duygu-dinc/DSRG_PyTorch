@@ -2,11 +2,11 @@
 gpu=1
 name=1
 arch=deeplab_large_fov
-resume='./datalist/PascalVOC/vgg16_20M_custom.pth'
+resume='./DSRG_PyTorch/datalist/PascalVOC/vgg16_20M_custom.pth'
 dataset="PascalVOC"
-data='./dataset/PascalVOC/VOCdevkit/VOC2012'
-gt_root='./datalist/PascalVOC/localization_cues.pickle'
-train_list='./datalist/PascalVOC/input_list.txt'
+data='./DSRG_PyTorch/dataset/PascalVOC/VOCdevkit/VOC2012'
+gt_root='./DSRG_PyTorch/datalist/PascalVOC/localization_cues.pickle'
+train_list='./DSRG_PyTorch/datalist/PascalVOC/input_list.txt'
 batch=20
 gamma=0.1
 max_iter=8000
@@ -17,7 +17,7 @@ lr=0.0005
 thre_fg=0.85
 thre_bg=0.99
 
-python3 main.py \
+python3 ./DSRG_PyTorch/main.py \
     --arch ${arch} \
     --name ${name} \
     --data ${data} \
