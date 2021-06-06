@@ -85,7 +85,7 @@ def save_checkpoint(state, save_dir, filename='checkpoint.pth.tar'):
 def load_model(model, model_path):
     if os.path.isfile(model_path):
         print("=> loading checkpoint '{}'".format(model_path))
-    checkpoint = torch.load(model_path)
+    checkpoint = torch.load(model_path, map_location=lambda storage, loc: storage, pickle_module=pickle)
     origin_state_dict = model.state_dict()
     model.load_state_dict(checkpoint, strict=False)
     return model
