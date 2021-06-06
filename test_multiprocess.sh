@@ -10,7 +10,7 @@ smooth=True
 color_mask=1
 gpu=0
 
-python3 test_multiprocess.py \
+python3 ./DSRG_PyTorch/test_multiprocess.py \
   --arch ${arch} \
   --trained ${trained} \
   --image-list ${image_list} \
