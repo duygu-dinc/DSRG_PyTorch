@@ -14,6 +14,11 @@ import krahenbuhl2013
 import skimage.color as imgco
 import skimage.io as imgio
 warnings.filterwarnings('ignore', '.*output shape of zoom.*')
+from functools import partial
+import pickle
+pickle.load = partial(pickle.load, encoding="latin1")
+pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
+model = torch.load(model_file, map_location=lambda storage, loc: storage, pickle_module=pickle)
 
 IMAGE_MEAN_VALUE = [104.0, 117.0, 123.0]
 
