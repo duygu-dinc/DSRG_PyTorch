@@ -13,7 +13,7 @@ from functools import partial
 import pickle
 pickle.load = partial(pickle.load, encoding="latin1")
 pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
-model = torch.load(model_file, map_location=lambda storage, loc: storage, pickle_module=pickle)
+#model = torch.load(model_file, map_location=lambda storage, loc: storage, pickle_module=pickle)
 
 palette = np.array([(0, 0, 0), (128, 0, 0), (0, 128,0 ), (128, 128, 0),
                   (0, 0, 128), (128, 0, 128), (0, 128, 128), (128, 128, 128),
