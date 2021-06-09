@@ -10,8 +10,7 @@ from utils.util import *
 from utils.util_args import get_args
 from utils.util_loader import data_loader
 from utils.util_loss import \
-    dsrg_layer, dsrg_seed_loss_layer,\
-    softmax_layer, seed_loss_layer,\
+    dsrg_layer, dsrg_seed_loss_layer, softmax_layer,\
     crf_layer, constrain_loss_layer
 import torchvision.utils as vutils
 import torch.nn.functional as F
