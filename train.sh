@@ -1,5 +1,5 @@
 #!/bin/bash
-gpu=1
+gpu=0
 name=1
 arch=deeplab_large_fov
 resume='./DSRG_PyTorch/datalist/PascalVOC/vgg16_20M_custom.pth'
