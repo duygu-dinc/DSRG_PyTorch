@@ -2,7 +2,7 @@ import numpy as np
 from scipy.ndimage import zoom
 from krahenbuhl2013 import CRF
 from .util_dsrg import CC_lab
-from .util_sflm import *
+#from .util_sflm import *
 import torch
 import warnings
 from torch.multiprocessing import Pool as pool
