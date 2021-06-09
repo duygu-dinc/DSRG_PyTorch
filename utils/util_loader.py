@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 from .dataset.voc import VOCDataset
-from .dataset.coco import COCODataset
+#from .dataset.coco import COCODataset
 
 def data_loader(args, debugflag=False):
     datalist = args.train_list
