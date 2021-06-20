@@ -43,7 +43,8 @@ class VOCDataset(Dataset):
         img = preprocess(img, self.resize_size, IMAGE_MEAN_VALUE).astype(np.float32)
 
         # Load true GT image for debugging
-        gt_image_path = os.path.join(self.root, "SegmentationClassAug_Visualization", name + '.png')
+        # gt_image_path = os.path.join(self.root, "SegmentationClassAug_Visualization", name + '.png')
+        gt_image_path = os.path.join(self.root, "SegmentationClassAug", name + '.png')
         true_gt_img = cv2.cvtColor(cv2.imread(gt_image_path, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
         true_gt_img = preprocess(true_gt_img, self.resize_size, [0.0, 0.0, 0.0]).astype(np.float32)
         true_gt_img = torch.from_numpy(true_gt_img)    
