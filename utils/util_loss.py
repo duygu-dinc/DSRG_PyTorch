@@ -76,10 +76,10 @@ def dsrg_layer(targets, labels, probs_ori, num_classes, thre_fg, thre_bg, NUM_WO
         params_list.append([thre_fg, thre_bg])
         complete_para_list.append(params_list)  
     
-    ret = pool.map(single_generate_seed_step,complete_para_list)
+    # ret = pool.map(single_generate_seed_step,complete_para_list)
     ret = []
-    # for i in range(batch_size):
-    #     ret.append(single_generate_seed_step(complete_para_list[i]))
+    for i in range(batch_size):
+        ret.append(single_generate_seed_step(complete_para_list[i]))
 
     new_labels = ret[0]
     for i in range(1,batch_size):
