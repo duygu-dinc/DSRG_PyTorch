@@ -88,7 +88,7 @@ def validation(val_images, val_targets, val_gt_maps, val_true_gt_imgs, model, ar
     val_targets = gpu_allocation(val_targets, args.gpu)
     val_gt_maps = gpu_allocation(val_gt_maps, args.gpu)
     val_true_gt_imgs = gpu_allocation(val_true_gt_imgs, args.gpu)
-    val_outputs, _ = model(val_images)
+    val_outputs = model(val_images)
     val_fc8_softmax = softmax_layer(val_outputs) #prob. bx21x41x41    
     val_gt_map_new = dsrg_layer(val_targets, val_gt_maps, val_fc8_softmax, num_classes, args.thre_fg, args.thre_bg, args.workers)
     val_gt_map_new = gpu_allocation(val_gt_map_new, args.gpu)    
