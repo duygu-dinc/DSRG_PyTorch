@@ -1,7 +1,7 @@
 #!/bin/bash
 arch=deeplab_large_fov
 image_list='./train_noval.txt'
-image_path='./benchmark_RELEASE/dataset/img'
+image_path='./benchmark_RELEASE/dataset'
 cls_labels_path='./DSRG_PyTorch/datalist/PascalVOC/cls_labels.npy'
 log_path='./DSRG_PyTorch/train_log/1'
 pred_path='./DSRG_PyTorch/SBDresult/1'
