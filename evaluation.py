@@ -112,9 +112,14 @@ if __name__ == '__main__':
     image_list = [i.strip() for i in open(args.image_list) if not i.strip() == '']
     for index, img_id in enumerate(image_list):
         gt_img_path = os.path.join(args.gt_path, img_id + '.png')
-        gt = cv2.imread(gt_img_path, cv2.IMREAD_GRAYSCALE)
+        if(args.color_mask):   #for ground truth
+            gt = cv2.imread(gt_img_path)
+            gt = cv2.cvtColor(gt, cv2.COLOR_BGR2RGB)
+            gt = semantic2mask(gt)
+        else:
+            gt = cv2.imread(gt_img_path, cv2.IMREAD_GRAYSCALE)
         
-        if (args.color_mask):
+        if (args.color_mask):  #for prediction
             pred_img_path = os.path.join(args.pred_path, img_id + '_pred.png')
             pred = cv2.imread(pred_img_path)
             pred = cv2.cvtColor(pred, cv2.COLOR_BGR2RGB)
